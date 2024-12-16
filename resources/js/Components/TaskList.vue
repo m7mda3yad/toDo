@@ -155,7 +155,7 @@ const getTasks = async (url = "/api/tasks") => {
 // Fetch categories
 const getCategories = async () => {
   try {
-    const response = await axios.get("/api/categories"); // Replace with correct route to get categories
+    const response = await axios.get("/api/tasks/create"); // Replace with correct route to get categories
     categories.value = response.data.categories;
   } catch (error) {
     console.error("Error fetching categories", error);

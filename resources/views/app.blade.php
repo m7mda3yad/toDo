@@ -16,11 +16,14 @@
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
+
     <script>
         window.Laravel = {
-            userId: @json(auth()->check() ? auth()->id() : null),
+            csrfToken: "{{ csrf_token() }}",
+            userId: {{ Auth::id() ?? 'null' }}
         };
     </script>
+
     <body class="font-sans antialiased">
         @inertia
     </body>

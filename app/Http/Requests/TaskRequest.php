@@ -13,6 +13,10 @@ class TaskRequest extends FormRequest
    public function rules(): array
     {
         return [
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'status' => 'required|in:pending,completed',
+            'category_id' => 'required|exists:categories,id',
 
         ];
     }
